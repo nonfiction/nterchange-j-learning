@@ -36,7 +36,7 @@ define('N_DAO_NOTNULL', 256);
 define('N_DAO_MYSQLTIMESTAMP', 512);
 
 if (substr(phpversion(),0,1) == 5) {
-	class NModel_Overload extends nObject {
+	class NModel_Overload extends NfObject {
 		function __call($method,$args) {
 			$return = null;
 			$this->_call($method,$args,$return);
@@ -58,7 +58,7 @@ if (substr(phpversion(),0,1) == 5) {
 		eval('function clone($t) { $r = $t; if (method_exists($r,"__clone")) { $r->__clone(); } return $r; }');
 	}
 	eval('
-		class NModel_Overload extends nObject {
+		class NModel_Overload extends NfObject {
 			function __call($method,$args,&$return) {
 				return $this->_call($method,$args,$return);
 			}
@@ -92,7 +92,7 @@ if (substr(phpversion(),0,1) == 5) {
  * @link       	http://www.nterchange.com/
  * @since      	File available since Release 3.0
  */
-class NModel extends nObject implements ArrayAccess {
+class NModel extends NfObject implements ArrayAccess {
 	/**
 	 * Container for the PEAR::DB object
 	 *
