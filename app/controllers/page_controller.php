@@ -212,9 +212,9 @@ class PageController extends SiteAdminController {
         while ($page_model->fetch()) {
           if ($page_model->$pk == $id) {
             // pull the "id" record out of the array
-            $item = clone($page_model);
+            $item = nf_clone($page_model);
           } else {
-            $pages[] = clone($page_model);
+            $pages[] = nf_clone($page_model);
           }
         }
         if (!$before) { // if there is no before, then the item goes last

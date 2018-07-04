@@ -210,7 +210,7 @@ class AssetController extends ContentController {
 		if ($this->versioning) {
 			$user_model = $this->loadModel('cms_auth');
 			$model = $this->getDefaultModel();
-			$model = clone($model);
+			$model = nf_clone($model);
 			if (!$model->{$model->primaryKey()}) {
 				$model->get($parameter);
 				$this->convertDateTimesToClient($model);

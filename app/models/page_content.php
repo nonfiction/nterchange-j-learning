@@ -104,14 +104,14 @@ class PageContent extends NModel {
 				if (!$page->get($this->page_id)) {
 					continue;
 				}
-				$page_contents[] = clone($this);
+				$page_contents[] = nf_clone($this);
 			}
 		}
 		return $page_contents;
 	}
 
 	/**
-	 * deleteOrphanedPageContent - Remove all content from the page_content table for 
+	 * deleteOrphanedPageContent - Remove all content from the page_content table for
 	 * 	a particular page_id. This is called from the page model when a page is deleted.
 	 *
 	 * @param	int		The id of a page that has been deleted.
@@ -133,10 +133,10 @@ class PageContent extends NModel {
 
   function grid_options($name) {
     $col = array(
-      'inherit' => 'Inherit', 
-      '12'      => '12 cols', 
-      '11'      => '11 cols', 
-      '10'      => '10 cols', 
+      'inherit' => 'Inherit',
+      '12'      => '12 cols',
+      '11'      => '11 cols',
+      '10'      => '10 cols',
       '9'       => '9 cols',
       '8'       => '8 cols',
       '7'       => '7 cols',
@@ -145,12 +145,12 @@ class PageContent extends NModel {
       '4'       => '4 cols',
       '3'       => '3 cols',
       '2'       => '2 cols',
-      '1'       => '1 col', 
+      '1'       => '1 col',
       'auto'    => 'Auto');
     $col_xs = array(
-      '12'      => '12 cols', 
-      '11'      => '11 cols', 
-      '10'      => '10 cols', 
+      '12'      => '12 cols',
+      '11'      => '11 cols',
+      '10'      => '10 cols',
       '9'       => '9 cols',
       '8'       => '8 cols',
       '7'       => '7 cols',
@@ -162,23 +162,23 @@ class PageContent extends NModel {
       '1'       => '1 col',
       'auto'    => 'Auto');
 
-    $row = array('inherit'=>'Inherit', 'auto'=>'Auto', 
-       '1'=> '1 row',   '2'=> '2 rows',  '3'=> '3 rows',  '4'=> '4 rows',  '5'=> '5 rows',  '6'=> '6 rows',  '7'=> '7 rows',  '8'=> '8 rows',  '9'=> '9 rows', '10'=>'10 rows', 
-      '11'=>'11 rows', '12'=>'12 rows', '13'=>'13 rows', '14'=>'14 rows', '15'=>'15 rows', '16'=>'16 rows', '17'=>'17 rows', '18'=>'18 rows', '19'=>'19 rows', '20'=>'20 rows', 
-      '21'=>'21 rows', '22'=>'22 rows', '23'=>'23 rows', '24'=>'24 rows', '25'=>'25 rows', '26'=>'26 rows', '27'=>'27 rows', '28'=>'28 rows', '29'=>'29 rows', '30'=>'30 rows', 
-      '31'=>'31 rows', '32'=>'32 rows', '33'=>'33 rows', '34'=>'34 rows', '35'=>'35 rows', '36'=>'36 rows', '37'=>'37 rows', '38'=>'38 rows', '39'=>'39 rows', '40'=>'40 rows', 
-      '41'=>'41 rows', '42'=>'42 rows', '43'=>'43 rows', '44'=>'44 rows', '45'=>'45 rows', '46'=>'46 rows', '47'=>'47 rows', '48'=>'48 rows', '49'=>'49 rows', '50'=>'50 rows'); 
-    $row_xs = array('auto'=>'Auto', 
-       '1'=> '1 row',   '2'=> '2 rows',  '3'=> '3 rows',  '4'=> '4 rows',  '5'=> '5 rows',  '6'=> '6 rows',  '7'=> '7 rows',  '8'=> '8 rows',  '9'=> '9 rows', '10'=>'10 rows', 
-      '11'=>'11 rows', '12'=>'12 rows', '13'=>'13 rows', '14'=>'14 rows', '15'=>'15 rows', '16'=>'16 rows', '17'=>'17 rows', '18'=>'18 rows', '19'=>'19 rows', '20'=>'20 rows', 
-      '21'=>'21 rows', '22'=>'22 rows', '23'=>'23 rows', '24'=>'24 rows', '25'=>'25 rows', '26'=>'26 rows', '27'=>'27 rows', '28'=>'28 rows', '29'=>'29 rows', '30'=>'30 rows', 
-      '31'=>'31 rows', '32'=>'32 rows', '33'=>'33 rows', '34'=>'34 rows', '35'=>'35 rows', '36'=>'36 rows', '37'=>'37 rows', '38'=>'38 rows', '39'=>'39 rows', '40'=>'40 rows', 
-      '41'=>'41 rows', '42'=>'42 rows', '43'=>'43 rows', '44'=>'44 rows', '45'=>'45 rows', '46'=>'46 rows', '47'=>'47 rows', '48'=>'48 rows', '49'=>'49 rows', '50'=>'50 rows'); 
+    $row = array('inherit'=>'Inherit', 'auto'=>'Auto',
+       '1'=> '1 row',   '2'=> '2 rows',  '3'=> '3 rows',  '4'=> '4 rows',  '5'=> '5 rows',  '6'=> '6 rows',  '7'=> '7 rows',  '8'=> '8 rows',  '9'=> '9 rows', '10'=>'10 rows',
+      '11'=>'11 rows', '12'=>'12 rows', '13'=>'13 rows', '14'=>'14 rows', '15'=>'15 rows', '16'=>'16 rows', '17'=>'17 rows', '18'=>'18 rows', '19'=>'19 rows', '20'=>'20 rows',
+      '21'=>'21 rows', '22'=>'22 rows', '23'=>'23 rows', '24'=>'24 rows', '25'=>'25 rows', '26'=>'26 rows', '27'=>'27 rows', '28'=>'28 rows', '29'=>'29 rows', '30'=>'30 rows',
+      '31'=>'31 rows', '32'=>'32 rows', '33'=>'33 rows', '34'=>'34 rows', '35'=>'35 rows', '36'=>'36 rows', '37'=>'37 rows', '38'=>'38 rows', '39'=>'39 rows', '40'=>'40 rows',
+      '41'=>'41 rows', '42'=>'42 rows', '43'=>'43 rows', '44'=>'44 rows', '45'=>'45 rows', '46'=>'46 rows', '47'=>'47 rows', '48'=>'48 rows', '49'=>'49 rows', '50'=>'50 rows');
+    $row_xs = array('auto'=>'Auto',
+       '1'=> '1 row',   '2'=> '2 rows',  '3'=> '3 rows',  '4'=> '4 rows',  '5'=> '5 rows',  '6'=> '6 rows',  '7'=> '7 rows',  '8'=> '8 rows',  '9'=> '9 rows', '10'=>'10 rows',
+      '11'=>'11 rows', '12'=>'12 rows', '13'=>'13 rows', '14'=>'14 rows', '15'=>'15 rows', '16'=>'16 rows', '17'=>'17 rows', '18'=>'18 rows', '19'=>'19 rows', '20'=>'20 rows',
+      '21'=>'21 rows', '22'=>'22 rows', '23'=>'23 rows', '24'=>'24 rows', '25'=>'25 rows', '26'=>'26 rows', '27'=>'27 rows', '28'=>'28 rows', '29'=>'29 rows', '30'=>'30 rows',
+      '31'=>'31 rows', '32'=>'32 rows', '33'=>'33 rows', '34'=>'34 rows', '35'=>'35 rows', '36'=>'36 rows', '37'=>'37 rows', '38'=>'38 rows', '39'=>'39 rows', '40'=>'40 rows',
+      '41'=>'41 rows', '42'=>'42 rows', '43'=>'43 rows', '44'=>'44 rows', '45'=>'45 rows', '46'=>'46 rows', '47'=>'47 rows', '48'=>'48 rows', '49'=>'49 rows', '50'=>'50 rows');
 
     $offset_col = array(
-      'inherit' => 'Inherit', 
-      '0'       => '0 cols', 
-      '1'       => '1 col', 
+      'inherit' => 'Inherit',
+      '0'       => '0 cols',
+      '1'       => '1 col',
       '2'       => '2 cols',
       '3'       => '3 cols',
       '4'       => '4 cols',
@@ -187,12 +187,12 @@ class PageContent extends NModel {
       '7'       => '7 cols',
       '8'       => '8 cols',
       '9'       => '9 cols',
-      '10'      => '10 cols', 
-      '11'      => '11 cols', 
+      '10'      => '10 cols',
+      '11'      => '11 cols',
       '12'      => '12 cols');
     $offset_col_xs = array(
-      '0'       => '0 cols', 
-      '1'       => '1 col', 
+      '0'       => '0 cols',
+      '1'       => '1 col',
       '2'       => '2 cols',
       '3'       => '3 cols',
       '4'       => '4 cols',
@@ -201,42 +201,42 @@ class PageContent extends NModel {
       '7'       => '7 cols',
       '8'       => '8 cols',
       '9'       => '9 cols',
-      '10'      => '10 cols', 
-      '11'      => '11 cols', 
+      '10'      => '10 cols',
+      '11'      => '11 cols',
       '12'      => '12 cols');
 
-    $offset_row = array('inherit'=>'Inherit', '0'=>'0 rows', 
-      '-25'=>'-25 rows', '-24'=>'-24 rows', '-23'=>'-23 rows', '-22'=>'-22 rows', '-21'=>'-20 rows', 
-      '-19'=>'-19 rows', '-18'=>'-18 rows', '-17'=>'-17 rows', '-16'=>'-16 rows', '-16'=>'-16 rows', 
-      '-15'=>'-15 rows', '-14'=>'-14 rows', '-13'=>'-13 rows', '-12'=>'-12 rows', '-11'=>'-11 rows', 
-      '-10'=>'-10 rows',  '-9'=> '-9 rows',  '-8'=> '-8 rows',  '-7'=> '-7 rows',  '-6'=> '-6 rows', 
-       '-5'=> '-5 rows',  '-4'=> '-4 rows',  '-3'=> '-3 rows',  '-2'=> '-2 rows',  '-1'=> '-1 row', 
-        '1'=>  '1 row',    '2'=>  '2 rows',   '3'=>  '3 rows',   '4'=>  '4 rows',   '5'=>  '5 rows', 
-        '6'=>  '6 rows',   '7'=>  '7 rows',   '8'=>  '8 rows',   '9'=>  '9 rows',  '10'=> '10 rows', 
-       '11'=> '11 rows',  '12'=> '12 rows',  '13'=> '13 rows',  '14'=> '14 rows',  '15'=> '15 rows', 
-       '16'=> '16 rows',  '17'=> '17 rows',  '18'=> '18 rows',  '19'=> '19 rows',  '20'=> '20 rows', 
-       '21'=> '21 rows',  '22'=> '22 rows',  '23'=> '23 rows',  '24'=> '24 rows',  '25'=> '25 rows'); 
+    $offset_row = array('inherit'=>'Inherit', '0'=>'0 rows',
+      '-25'=>'-25 rows', '-24'=>'-24 rows', '-23'=>'-23 rows', '-22'=>'-22 rows', '-21'=>'-20 rows',
+      '-19'=>'-19 rows', '-18'=>'-18 rows', '-17'=>'-17 rows', '-16'=>'-16 rows', '-16'=>'-16 rows',
+      '-15'=>'-15 rows', '-14'=>'-14 rows', '-13'=>'-13 rows', '-12'=>'-12 rows', '-11'=>'-11 rows',
+      '-10'=>'-10 rows',  '-9'=> '-9 rows',  '-8'=> '-8 rows',  '-7'=> '-7 rows',  '-6'=> '-6 rows',
+       '-5'=> '-5 rows',  '-4'=> '-4 rows',  '-3'=> '-3 rows',  '-2'=> '-2 rows',  '-1'=> '-1 row',
+        '1'=>  '1 row',    '2'=>  '2 rows',   '3'=>  '3 rows',   '4'=>  '4 rows',   '5'=>  '5 rows',
+        '6'=>  '6 rows',   '7'=>  '7 rows',   '8'=>  '8 rows',   '9'=>  '9 rows',  '10'=> '10 rows',
+       '11'=> '11 rows',  '12'=> '12 rows',  '13'=> '13 rows',  '14'=> '14 rows',  '15'=> '15 rows',
+       '16'=> '16 rows',  '17'=> '17 rows',  '18'=> '18 rows',  '19'=> '19 rows',  '20'=> '20 rows',
+       '21'=> '21 rows',  '22'=> '22 rows',  '23'=> '23 rows',  '24'=> '24 rows',  '25'=> '25 rows');
 
-    $offset_row_xs = array('0'=>'0 rows', 
-      '-25'=>'-25 rows', '-24'=>'-24 rows', '-23'=>'-23 rows', '-22'=>'-22 rows', '-21'=>'-20 rows', 
-      '-19'=>'-19 rows', '-18'=>'-18 rows', '-17'=>'-17 rows', '-16'=>'-16 rows', '-16'=>'-16 rows', 
-      '-15'=>'-15 rows', '-14'=>'-14 rows', '-13'=>'-13 rows', '-12'=>'-12 rows', '-11'=>'-11 rows', 
-      '-10'=>'-10 rows',  '-9'=> '-9 rows',  '-8'=> '-8 rows',  '-7'=> '-7 rows',  '-6'=> '-6 rows', 
-       '-5'=> '-5 rows',  '-4'=> '-4 rows',  '-3'=> '-3 rows',  '-2'=> '-2 rows',  '-1'=> '-1 row', 
-        '1'=>  '1 row',    '2'=>  '2 rows',   '3'=>  '3 rows',   '4'=>  '4 rows',   '5'=>  '5 rows', 
-        '6'=>  '6 rows',   '7'=>  '7 rows',   '8'=>  '8 rows',   '9'=>  '9 rows',  '10'=> '10 rows', 
-       '11'=> '11 rows',  '12'=> '12 rows',  '13'=> '13 rows',  '14'=> '14 rows',  '15'=> '15 rows', 
-       '16'=> '16 rows',  '17'=> '17 rows',  '18'=> '18 rows',  '19'=> '19 rows',  '20'=> '20 rows', 
-       '21'=> '21 rows',  '22'=> '22 rows',  '23'=> '23 rows',  '24'=> '24 rows',  '25'=> '25 rows'); 
+    $offset_row_xs = array('0'=>'0 rows',
+      '-25'=>'-25 rows', '-24'=>'-24 rows', '-23'=>'-23 rows', '-22'=>'-22 rows', '-21'=>'-20 rows',
+      '-19'=>'-19 rows', '-18'=>'-18 rows', '-17'=>'-17 rows', '-16'=>'-16 rows', '-16'=>'-16 rows',
+      '-15'=>'-15 rows', '-14'=>'-14 rows', '-13'=>'-13 rows', '-12'=>'-12 rows', '-11'=>'-11 rows',
+      '-10'=>'-10 rows',  '-9'=> '-9 rows',  '-8'=> '-8 rows',  '-7'=> '-7 rows',  '-6'=> '-6 rows',
+       '-5'=> '-5 rows',  '-4'=> '-4 rows',  '-3'=> '-3 rows',  '-2'=> '-2 rows',  '-1'=> '-1 row',
+        '1'=>  '1 row',    '2'=>  '2 rows',   '3'=>  '3 rows',   '4'=>  '4 rows',   '5'=>  '5 rows',
+        '6'=>  '6 rows',   '7'=>  '7 rows',   '8'=>  '8 rows',   '9'=>  '9 rows',  '10'=> '10 rows',
+       '11'=> '11 rows',  '12'=> '12 rows',  '13'=> '13 rows',  '14'=> '14 rows',  '15'=> '15 rows',
+       '16'=> '16 rows',  '17'=> '17 rows',  '18'=> '18 rows',  '19'=> '19 rows',  '20'=> '20 rows',
+       '21'=> '21 rows',  '22'=> '22 rows',  '23'=> '23 rows',  '24'=> '24 rows',  '25'=> '25 rows');
 
     $pull = array(
-      'inherit' => 'Inherit', 
-      'none'    => 'None', 
-      'right'   => 'Right', 
+      'inherit' => 'Inherit',
+      'none'    => 'None',
+      'right'   => 'Right',
       'left'    => 'Left');
     $pull_xs = array(
-      'none'    => 'None', 
-      'right'   => 'Right', 
+      'none'    => 'None',
+      'right'   => 'Right',
       'left'    => 'Left');
 
     switch ($name) {

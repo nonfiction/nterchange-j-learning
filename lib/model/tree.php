@@ -57,7 +57,7 @@ class ModelTree extends NModel {
 		parent::__construct();
 		if ((defined('TREE_CACHING') && TREE_CACHING == false) || false == ($nodes = NCache::getMenu())) {
 			$pk = $this->primaryKey();
-			$model = clone($this);
+			$model = nf_clone($this);
 			$model->reset();
 			if ($model->find()) {
 				while ($model->fetch()) {
@@ -95,7 +95,7 @@ class ModelTree extends NModel {
 	 */
 	function getRootNode() {
 		if (!$this->root_node) {
-			$model = clone($this);
+			$model = nf_clone($this);
 			$model->reset();
 			$table = $model->table();
 			$parent_id = $table['parent_id'];

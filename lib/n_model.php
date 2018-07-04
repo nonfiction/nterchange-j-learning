@@ -53,9 +53,16 @@ if (substr(phpversion(),0,1) == 5) {
 		}
 	}
 } else {
-	if (!function_exists('clone')) {
+	if (!function_exists('nf_clone')) {
 		// emulate clone  - as per php_compact, slow but really the correct behaviour..
-		eval('function clone($t) { $r = $t; if (method_exists($r,"__clone")) { $r->__clone(); } return $r; }');
+		eval('
+			function nf_clone($t) {
+				$r = $t;
+				if (method_exists($r,"__clone")) {
+					$r->__clone();
+				}
+				return $r;
+			}');
 	}
 	eval('
 		class NModel_Overload extends NfObject {

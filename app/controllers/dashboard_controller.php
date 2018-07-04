@@ -185,7 +185,7 @@ class DashboardController extends nterchangeController {
 					if ($workflow_model->find(array('conditions'=>$conditions, 'order_by'=>'page_id, asset, asset_id, id'))) {
 						$workflow_models = array();
 						while ($workflow_model->fetch()) {
-							$workflow_models[] = clone($workflow_model);
+							$workflow_models[] = nf_clone($workflow_model);
 						}
 						$i = 0;
 						$current_asset = '';
@@ -306,7 +306,7 @@ class DashboardController extends nterchangeController {
 		}
 		return '';
 	}
-	
+
 	function dashboardClientContent() {
 		$this->render(array('action'=>'dashboard_client_content', 'return'=>false));
 	}

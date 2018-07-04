@@ -562,9 +562,9 @@ class PageContentController extends nterchangeController {
         while ($page_content_model->fetch()) {
           if ($page_content_model->$pk == $id) {
             // pull the "id" record out of the array
-            $item = clone($page_content_model);
+            $item = nf_clone($page_content_model);
           } else {
-            $page_contents[] = clone($page_content_model);
+            $page_contents[] = nf_clone($page_content_model);
           }
         }
         if (!$before) { // if there is no before, then the item goes last

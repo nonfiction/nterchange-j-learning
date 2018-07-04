@@ -80,7 +80,7 @@ class WorkflowController extends nterchangeController {
 		$pages = false;
 		if ($model->action == WORKFLOW_ACTION_EDIT && $page_contents && count($page_contents) > 1) {
 			$pages = array();
-			$tmp_page_model = clone($page_model);
+			$tmp_page_model = nf_clone($page_model);
 			foreach ($page_contents as $page_content) {
 				if (!isset($pages[$tmp_page_model->{$tmp_page_model->primaryKey()}])) {
 					$tmp_page_model->reset();
@@ -418,7 +418,7 @@ class WorkflowController extends nterchangeController {
 			$model->submitted = 0;
 			if ($model->get($id)) {
 				$this->convertDateTimesToClient($model);
-				$workflows[] = clone($model);
+				$workflows[] = nf_clone($model);
 			}
 		}
 		if (empty($workflows)) {
@@ -541,7 +541,7 @@ exit;
 		$pk = $model->primaryKey();
 		if ($model->get($workflow_id)) {
 			$page_model = &$model->getLink('page_id', 'page');
-			$model_count = clone($model);
+			$model_count = nf_clone($model);
 			$model_count->reset();
 			$parent_workflow = $model->parent_workflow?$model->parent_workflow:$workflow_id;
 			$workflow_steps = array();
@@ -575,7 +575,7 @@ exit;
 									$approver = true;
 									break;
 							}
-							$users[] = clone($user_model);
+							$users[] = nf_clone($user_model);
 						}
 						$user_model->reset();
 					}
@@ -603,7 +603,7 @@ exit;
 					unset($users);
 				}
 				if (empty($notify_users) && $user_model->get($auth->currentUserId()) && $user_model->user_level >= N_USER_ADMIN) {
-					$notify_users[] = clone($user_model);
+					$notify_users[] = nf_clone($user_model);
 				}
 				unset($user_model);
 				unset($page_content_model);
@@ -658,7 +658,7 @@ exit;
 			$model->workflow_group_id = $workflow_group_id;
 			$model->user_id = $user_id;
 			if ($model->find(null, true)) {
-				$workflow_user_model = clone($model);
+				$workflow_user_model = nf_clone($model);
 				$current_role = $workflow_user_model->role;
 				$rights = 0;
 				$model->reset();
