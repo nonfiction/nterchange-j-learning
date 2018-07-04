@@ -18,7 +18,7 @@
  * @link       	http://www.nterchange.com/
  * @since      	File available since Release 3.0
  */
-class Object {
+class NfObject {
 	function __construct(){}
 
 	function toString() {

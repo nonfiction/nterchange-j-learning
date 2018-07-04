@@ -50,7 +50,7 @@ if ($dh) {
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.0
  */
-class NController extends Object {
+class NController extends NfObject {
 	/**
 	 * Container for a NAuth object
 	 *

@@ -22,17 +22,17 @@ require_once 'mirror/rsync_mirror.php';
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.1.16
  */
-class NMirror extends Object {
-	
+class NMirror extends NfObject {
+
 	function __construct() {
 
 	}
-	
+
 	/**
 	 * getInstance - Returns an instance object of a Mirror child class.
 	 *		Depends on what is set for MIRROR_TYPE in the conf/conf.php
 	 *
-	 * @return 	object	
+	 * @return 	object
 	 **/
 	function getInstance() {
 		if (defined('MIRROR_TYPE') && MIRROR_TYPE == 'ftp') {
@@ -43,52 +43,52 @@ class NMirror extends Object {
 			return new RsyncMirror();
 		} else {
 			return false;
-		}	
+		}
 	}
-	
+
 	/**
 	 * connect - connect to the remote server
 	 *
 	 * @return void
 	 **/
 	function connect() {
-		
+
 	}
 
 	/**
 	 * disconnect - disconnect from the remote server
 	 *
 	 * @return void
-	 **/	
+	 **/
 	function disconnect() {
-		
+
 	}
-	
+
 	/**
 	 * putFile - Put a file on the remote server.
 	 *
 	 * @return void
 	 **/
 	function putFile() {
-		
+
 	}
-	
+
 	/**
 	 * deleteFile - Delete a file from the remote server.
 	 *
 	 * @return void
 	 **/
 	function deleteFile() {
-		
+
 	}
-	
+
 	/**
 	 * synchronizeDirectory - Synchronize an entire directory from local to remote.
 	 *
 	 * @return void
 	 **/
 	function synchronizeDirectory() {
-		
+
 	}
 
 }

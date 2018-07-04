@@ -24,7 +24,7 @@ require_once 'Date.php';
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.0
  */
-class NDate extends Object {
+class NDate extends NfObject {
 	function &getClientTZ() {
 		// if SITE_TIME_ZONE is present, use it, otherwise, best guess as to server's local time zone
 		if (defined('SITE_TIME_ZONE') && Date_TimeZone::isValidID(SITE_TIME_ZONE)) {

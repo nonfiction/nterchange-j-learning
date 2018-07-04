@@ -20,7 +20,7 @@ require_once 'vendor/s3.class.php';
  * @since      File available since Release 3.1.16
  */
 
-class S3Mirror extends Object {
+class S3Mirror extends NfObject {
 
 	function __construct() {
 

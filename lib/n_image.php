@@ -22,13 +22,13 @@
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.1.16
  */
-class NImage extends Object {
+class NImage extends NfObject {
 	// List of image formats we can convert to jpeg. These are all tested and work.
 	// NOTE: PDF can do some odd things (sizes and cropping) - but it does convert.
 	var $bad_formats = array ('PSD', 'TIFF', 'BMP', 'PS', 'PCD', 'WMF', 'PDF');
 	var $convert_binary = '/usr/bin/convert';
 	var $identify_binary = '/usr/bin/identify';
-	
+
 	function __construct() {
 		if (class_exists('Imagick')) {
 			// Yay.
@@ -83,7 +83,7 @@ class NImage extends Object {
 			$this->saveUpdatedImage($filename, $asset, $field, $id);
 		}
 	}
-	
+
 	/**
 	 * saveUpdatedImage - Saves an image's new filename back to the database.
 	 *
@@ -118,7 +118,7 @@ class NImage extends Object {
 		$image->destroy();
 		return $format;
 	}
-	
+
 	/**
 	 * isImageBadFormat - Is the format of this image in $this->bad_formats?
 	 *
@@ -169,7 +169,7 @@ class NImage extends Object {
 		$image->destroy();
 		return $new_filename;
 	}
-	
+
 	/**
 	 * isImageCMYK - Determines whether or not an image is in CMYK format.
 	 *
@@ -188,7 +188,7 @@ class NImage extends Object {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * convertCMYKToRGB - Convert a CMYK image to RGB.
 	 *		Resaves with the same filename and overwrites the original file.

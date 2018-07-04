@@ -33,7 +33,7 @@ require_once 'n_filesystem.php';
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.1.13
  */
-class NDownload extends Object {
+class NDownload extends NfObject {
 	var $model;
 	var $field;
 	var $asset_id;

@@ -20,7 +20,7 @@ require_once 'controller/inflector.php';
  * @link       http://www.nterchange.com/
  * @since      File available since Release 3.0
  */
-class NDispatcher extends Object {
+class NDispatcher extends NfObject {
 	var $url = '';
 	var $params = array();
 	var $app_dir = false;
