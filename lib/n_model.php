@@ -35,7 +35,7 @@ define('N_DAO_FLOAT', 128);
 define('N_DAO_NOTNULL', 256);
 define('N_DAO_MYSQLTIMESTAMP', 512);
 
-if (substr(phpversion(),0,1) == 5) {
+if (substr(phpversion(),0,1) >= 5) {
 	class NModel_Overload extends NfObject {
 		function __call($method,$args) {
 			$return = null;
