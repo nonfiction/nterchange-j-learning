@@ -1,0 +1,14 @@
+<div class="page-content" id="page-content-{$page_content_id}" data-page-content="{$page_content_id}">
+  <div class="ntoolbar ntoolbar-item btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <a class="btn btn-sm btn-default" href="{url_for controller=$asset action='edit' id=$asset_id referer=1 page_content_id=$page_content_id}">
+        edit
+      </a>
+
+      {if $page_content_id}
+      <a class="btn btn-sm btn-default" href="{url_for controller='page_content' action='removecontent' id=$page_content_id referer=1}">
+        delete
+      </a>
+      {/if}
+    </div>
+  </div>

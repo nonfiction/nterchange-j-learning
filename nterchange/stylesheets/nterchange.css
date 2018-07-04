@@ -1,0 +1,128 @@
+/*
+	nterchange - nonfiction studios inc.
+*/
+
+h1.title {
+  border-bottom: 1px solid #e9e9e9;
+  text-align: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #777;
+  line-height: 2em;
+}
+
+h2.title,
+h3.title {
+  padding-top: 8px;
+}
+
+div.header {
+  color: #444;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 2px;
+}
+
+form td.header {
+  background-color: #E85;
+}
+
+form td.header div.header {
+  color: #FFF;
+}
+
+div.formerror {
+  background: #F99;
+  padding: 1px 4px;
+}
+
+span.formerror {
+  color: #F00;
+}
+
+span.notfound {
+  background-color: #E33;
+  color: #fff;
+}
+
+#logout {
+  color: #fff;
+  padding: 10px 20px;
+  float: right;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+#logout a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+div.control {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #eee;
+  padding: 2px;
+  margin: 2px 0;
+}
+
+a.control,
+a.controlactive {
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+a.control:link,
+a.control:visited {
+  color: #E72;
+  text-decoration: none;
+}
+
+a.control:hover,
+a.control:active {
+  color: #FFF;
+  background-color: #E72;
+  text-decoration: none;
+}
+
+a.controlactive:link,
+a.controlactive:visited {
+  color: #444;
+  background-color: #FC3;
+  text-decoration: none;
+}
+
+a.controlactive:hover,
+a.controlactive:active {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#asset {
+  border: 1px #EEE solid;
+  padding: 6px;
+  margin-top: 6px;
+}
+
+.assettype {
+  font-size: .9em;
+  color: #444;
+}
+
+tr.grid[class*="_xs"] {
+  background: #fefefe;
+}
+
+tr.grid[class*="_sm"] {
+  background: #efeff2;
+}
+
+tr.grid[class*="_md"] {
+  background: #fefefe;
+}
+
+tr.grid[class*="_lg"] {
+  background: #efeff2;
+}
+

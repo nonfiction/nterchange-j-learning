@@ -1,0 +1,13 @@
+<div class="audit-trail-search">
+  <form{$audit_search.attributes}>
+    <h3 class="title">Audit Trail Search</h3>
+    <div class="audit-trail-search-inputs">
+      {foreach from=$audit_search.elements item=el}
+        {$el.label|default:'&nbsp;'} {$el.html}
+      {/foreach}
+    </div>
+  </form>
+</div>
+<p>Your search on {$date|date_format:'%b %e, %Y'} found {$result_count} matches.</p>
+{$rss_feed}
+{$audit_trail}
