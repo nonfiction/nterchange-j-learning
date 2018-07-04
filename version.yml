@@ -1,4 +1,4 @@
-version: "4.4.1"
+version: "1"
 distribution: "https://github.com/nonfiction/nterchange-j-learning"
 changelog: "https://github.com/nonfiction/nterchange-j-learning/commits/master"
 release_date: "July 4th, 2018"
